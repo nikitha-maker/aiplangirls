@@ -14,6 +14,7 @@ class FitnessGoalScreen extends StatefulWidget {
 }
 
 class _FitnessGoalScreenState extends State<FitnessGoalScreen> {
+  String gender = "female";
   int selectedIndex = 1;
 
 
@@ -102,6 +103,7 @@ class _FitnessGoalScreenState extends State<FitnessGoalScreen> {
 
             const SizedBox(height: 28),
 
+
             // ===== TITLE =====
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -155,7 +157,9 @@ class _FitnessGoalScreenState extends State<FitnessGoalScreen> {
                       Expanded(
                         child: GoalCard(
                           title: "Weight Loss",
-                          imagePath: "assets/weight_loss.png",
+                          imagePath: gender == "male"
+                              ? "assets/weight_loss_boy.png"
+                              : "assets/weight_lossgirls.png",
                           selected: selectedIndex == 0,
                           onTap: () {
                             setState(() => selectedIndex = 0);
@@ -173,7 +177,9 @@ class _FitnessGoalScreenState extends State<FitnessGoalScreen> {
                       Expanded(
                         child: GoalCard(
                           title: "Muscle Build",
-                          imagePath: "assets/muscle_build.png",
+                          imagePath: gender == "male"
+                              ? "assets/muscle_buildboys.png"
+                              : "assets/muscle_buildgirls.png",
                           selected: selectedIndex == 1,
                           onTap: () {
                             setState(() => selectedIndex = 1);
@@ -197,7 +203,9 @@ class _FitnessGoalScreenState extends State<FitnessGoalScreen> {
                     width: MediaQuery.of(context).size.width * 0.55,
                     child: GoalCard(
                       title: "Keep Fit",
-                      imagePath: "assets/keep_fit.png",
+                      imagePath: gender == "male"
+                          ? "assets/keep_fitboys.png"
+                          : "assets/keep_fitgirls.png",
                       selected: selectedIndex == 2,
                       onTap: () {
                         setState(() => selectedIndex = 2);
@@ -789,6 +797,7 @@ class FocusAreaScreen extends StatefulWidget {
 }
 
 class _FocusAreaScreenState extends State<FocusAreaScreen> {
+  String gender = "male";
   final Color orangeLight = Colors.orange.shade400;
   final Color orangeDark = Colors.orange.shade800;
   final Color grey = Colors.grey.shade400;
@@ -1022,25 +1031,47 @@ class _FocusAreaScreenState extends State<FocusAreaScreen> {
                         alignment: Alignment.topCenter,
                         children: [
                           Image.asset(
-                            "assets/model1.png",
+                            gender == "male"
+                                ? "assets/model1boys.png"
+                                : "assets/model1girls.png",
                             fit: BoxFit.contain,
                           ),
 
                           if (selectedFocusIndexes.contains(0))
-                            Image.asset("assets/arms.png", fit: BoxFit.contain),
+                            Image.asset(
+                              gender == "male"
+                                  ? "assets/armsboys.png"
+                                  : "assets/armsgirls.png",
+                              fit: BoxFit.contain,
+                            ),
 
                           if (selectedFocusIndexes.contains(1))
-                            Image.asset("assets/belly.png", fit: BoxFit.contain),
+                            Image.asset(
+                              gender == "male"
+                                  ? "assets/bellyboys.png"
+                                  : "assets/bellygirls.png",
+                              fit: BoxFit.contain,
+                            ),
 
                           if (selectedFocusIndexes.contains(2))
-                            Image.asset("assets/butt.png", fit: BoxFit.contain),
+                            Image.asset(
+                              gender == "male"
+                                  ? "assets/buttboys.png"
+                                  : "assets/buttgirls.png",
+                              fit: BoxFit.contain,
+                            ),
 
                           if (selectedFocusIndexes.contains(3))
-                            Image.asset("assets/legs.png", fit: BoxFit.contain),
+                            Image.asset(
+                              gender == "male"
+                                  ? "assets/legsboys.png"
+                                  : "assets/legsgirls.png",
+                              fit: BoxFit.contain,
+                            ),
                         ],
                       ),
+                    )
 
-                    ),
                   ],
                 ),
               ),
@@ -1119,6 +1150,7 @@ class TargetBodyTypeWidget extends StatefulWidget {
 }
 
 class _TargetBodyTypeWidgetState extends State<TargetBodyTypeWidget> {
+  String gender = "male"; // or "female"
   double bodyFat = 30;
 
   String get bodyTypeTitle {
@@ -1164,14 +1196,24 @@ class _TargetBodyTypeWidgetState extends State<TargetBodyTypeWidget> {
     "Body fat 26–30%",
     "Body fat 30–35%",
   ];
-
-  final List<String> bodyImages = [
-    "assets/body_10_13.png",
-    "assets/body_14_17.png",
-    "assets/body_18_22.png",
-    "assets/body_26_30.png",
-    "assets/body_30_35.png",
+  List<String> get bodyImages => [
+    gender == "male"
+        ? "assets/body_10_13_boys.png"
+        : "assets/body_10_13_girls.png",
+    gender == "male"
+        ? "assets/body_14_17_boys.png"
+        : "assets/body_14_17_girls.png",
+    gender == "male"
+        ? "assets/body_18_22_boys.png"
+        : "assets/body_18_22_girls.png",
+    gender == "male"
+        ? "assets/body_26_30_boys.png"
+        : "assets/body_26_30_girls.png",
+    gender == "male"
+        ? "assets/body_30_35_boys.png"
+        : "assets/body_30_35_girls.png",
   ];
+
 
 
   @override
@@ -1484,7 +1526,7 @@ class _ActivityLevelScreenState extends State<ActivityLevelScreen> {
       // 🔹 BACKGROUND IMAGE
       Positioned.fill(
       child: Image.asset(
-        "assets/bg_activity.png",
+        "assets/bg_activitygirls.png",
         fit: BoxFit.cover,
       ),
     ),
@@ -1768,7 +1810,7 @@ class _WorkoutPlaceScreenState extends State<WorkoutPlaceScreen> {
       // ===== BACKGROUND IMAGE =====
       Positioned.fill(
       child: Image.asset(
-        "assets/bg_workout_place.png",
+        "assets/bg_workout_placegirls.png",
         fit: BoxFit.cover,
       ),
     ),
@@ -2079,16 +2121,21 @@ class InjuryScreen extends StatefulWidget {
 }
 
 class _InjuryScreenState extends State<InjuryScreen> {
-  Set<int> selectedInjuries = {};
+  String gender = "male"; // or "female"
 
-  final List<Map<String, String>> injuries = [
-    {"title": "No Injuries", "image": "assets/injury_none.png"},
-    {"title": "Shoulder", "image": "assets/injury_shoulder.png"},
-    {"title": "Back", "image": "assets/injury_back.png"},
-    {"title": "Waist", "image": "assets/injury_waist.png"},
-    {"title": "Wrist", "image": "assets/injury_wrist.png"},
-    {"title": "Knee", "image": "assets/injury_knee.png"},
-  ];
+  Set<int> selectedInjuries = {};
+  List<Map<String, String>> get injuries {
+    String suffix = gender == "male" ? "boys" : "girls";
+
+    return [
+      {"title": "No Injuries", "image": "assets/injury_none_$suffix.png"},
+      {"title": "Shoulder", "image": "assets/injury_shoulder_$suffix.png"},
+      {"title": "Back", "image": "assets/injury_back_$suffix.png"},
+      {"title": "Waist", "image": "assets/injury_waist_$suffix.png"},
+      {"title": "Wrist", "image": "assets/injury_wrist_$suffix.png"},
+      {"title": "Knee", "image": "assets/injury_knee_$suffix.png"},
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {

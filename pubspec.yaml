@@ -58,30 +58,49 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/weight_loss.png
-    - assets/muscle_build.png
-    - assets/keep_fit.png
-    - assets/body_model.png
-    - assets/model1.png
-    - assets/belly.png
-    - assets/arms.png
-    - assets/butt.png
-    - assets/legs.png
-    - assets/body_10_13.png
-    - assets/body_14_17.png
-    - assets/body_18_22.png
-    - assets/body_26_30.png
-    - assets/body_30_35.png
-    - assets/injury_none.png
-    - assets/injury_shoulder.png
-    - assets/injury_back.png
-    - assets/injury_waist.png
-    - assets/injury_wrist.png
-    - assets/injury_knee.png
-    - assets/bg_activity.png
-    - assets/bg_workout_place.png
+    - assets/weight_lossgirls.png
+    - assets/muscle_buildgirls.png
+    - assets/keep_fitgirls.png
+
+    - assets/model1girls.png
+    - assets/bellygirls.png
+    - assets/armsgirls.png
+    - assets/buttgirls.png
+    - assets/legsgirls.png
+    - assets/body_10_13_girls.png
+    - assets/body_14_17_girls.png
+    - assets/body_18_22_girls.png
+    - assets/body_26_30_girls.png
+    - assets/body_30_35_girls.png
+    - assets/injury_none_girls.png
+    - assets/injury_shoulder_girls.png
+    - assets/injury_back_girls.png
+    - assets/injury_waist_girls.png
+    - assets/injury_wrist_girls.png
+    - assets/injury_knee_girls.png
+    - assets/bg_activitygirls.png
+    - assets/bg_workout_placegirls.png
     - assets/target.png
     - assets/fitness_glow.json
+    - assets/weight_loss_boy.png
+    - assets/muscle_buildboys.png
+    - assets/keep_fitboys.png
+    - assets/armsboys.png
+    - assets/bellyboys.png
+    - assets/buttboys.png
+    - assets/legsboys.png
+    - assets/model1boys.png
+    - assets/body_10_13_boys.png
+    - assets/body_14_17_boys.png
+    - assets/body_18_22_boys.png
+    - assets/body_26_30_boys.png
+    - assets/body_30_35_boys.png
+    - assets/injury_none_boys.png
+    - assets/injury_shoulder_boys.png
+    - assets/injury_back_boys.png
+    - assets/injury_waist_boys.png
+    - assets/injury_wrist_boys.png
+    - assets/injury_knee_boys.png
 
 
 
